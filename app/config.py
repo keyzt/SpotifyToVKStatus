@@ -7,7 +7,7 @@ load_dotenv('.env')
 class VKConfig:
 	VK_TOKEN = os.getenv("VK_TOKEN") 
 	STATUS = "Now playing (Spotify): {track} - {artist} | {album}"
-	STANDARD_STATUS = ""
+	STANDART_STATUS = ""
 
 
 class SpotifyConfig:
