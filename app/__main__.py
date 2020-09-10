@@ -52,7 +52,7 @@ def update_status(_current_playing):
 
 def set_standart_status() -> None:
     print("Установлен стандартный статус")
-    return vk.call("status.set", { "text": VKConfig.STANDARD_STATUS })
+    return vk.call("status.set", { "text": VKConfig.STANDART_STATUS })
 
 
 def set_status(status) -> None:
@@ -61,8 +61,8 @@ def set_status(status) -> None:
 
 if __name__ == '__main__':
     try:
-        VKConfig.STANDARD_STATUS = vk("status.get")['response']['text']
-        print(f"Текущий статус: {VKConfig.STANDARD_STATUS}")
+        VKConfig.STANDART_STATUS = vk("status.get")['response']['text']
+        print(f"Текущий статус: {VKConfig.STANDART_STATUS}")
 
         while True:
             # print("Получаю обновления")
