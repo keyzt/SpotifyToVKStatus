@@ -2,7 +2,7 @@
 *Spotify To VK Status* - модуль для трянсляции прослушиваемых треков из Spotify в статуст ВКонтакте.
 
 #Установка
-1. Склонируйте репозиторий (или просто скачайте [его](https://github.com/keyzt/spotifyTo-VK-Status/archive/master.zip)) и перейдите в директорию с проектом.
+1. Склонируйте репозиторий (или просто скачайте [его](https://github.com/keyzt/SpotifyTo-VK-Status/archive/master.zip)) и перейдите в директорию с проектом.
 ```bash
 git clone https://github.com/keyzt/spotifyTo-VK-Status.git #
 cd spotifyTo-VK-Status
