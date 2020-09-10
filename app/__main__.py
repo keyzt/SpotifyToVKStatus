@@ -67,7 +67,7 @@ if __name__ == '__main__':
         while True:
             # print("Получаю обновления")
             current_playing = update_status(current_playing)
-            time.sleep(10)
+            time.sleep(8)
 
 
     except VKLightError as e:
