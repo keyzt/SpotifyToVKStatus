@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 load_dotenv('.env')
 
 class VKConfig:
-	VK_TOKEN = os.getenv("VK_TOKEN") 
-	STATUS = "Now playing (Spotify): {track} - {artist} | {album}"
-	STANDART_STATUS = ""
+    VK_TOKEN = os.getenv("VK_TOKEN") 
+    STATUS = "Now playing (Spotify): {track} - {artist} | {album}"
+    STANDART_STATUS = ""
 
 
 class SpotifyConfig:
