@@ -1,13 +1,17 @@
-# Spotify To VK Status
-**Spotify To VK Status** - модуль для трянсляции прослушиваемых треков из Spotify в статуст ВКонтакте.
+<p align="center">
+  <img src="logo.svg"  width="450"/>
+  <p align="center"><b>Утилита</b> для трянсляции прослушиваемых треков из Spotify в статус ВКонтакте.</p>
+</p>
 
+
+#
 # Установка
 
-1. Склонируйте репозиторий (или просто скачайте [его](https://github.com/keyzt/SpotifyTo-VK-Status/archive/master.zip)) и перейдите в директорию с проектом.
+1. Склонируйте репозиторий (или просто скачайте [его](https://github.com/keyzt/SpotifyToVKStatus/archive/master.zip)) и перейдите в директорию с проектом.
 
-	```bash
-	git clone https://github.com/keyzt/SpotifyTo-VK-Status.git
-	cd spotifyTo-VK-Status
+	```console
+	git clone https://github.com/keyzt/SpotifyToVKStatus.git
+	cd SpotifyToVKStatus
 	```
 
 2. Установите необходиме зависимости:
@@ -20,11 +24,13 @@
 
 # Использование
 
-Обычный запуск:
-```bash
-python -m app
-```
-Запуск при помощи **Poetry**:
-```bash
-poetry run python -m app
-```
+- Обычный запуск:
+	```console
+	python -m app
+	```
+- Запуск при помощи **Poetry**:
+	```console
+	poetry run python -m app
+	```
+
+	![Screenshot](screenshot.png)
