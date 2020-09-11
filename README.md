@@ -31,4 +31,4 @@
 	poetry run python -m app
 	```
 
-	![Screenshot](screenshot.png)
+![Screenshot](screenshot.png)
