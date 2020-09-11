@@ -6,7 +6,7 @@ load_dotenv('.env')
 
 class VKConfig:
     VK_TOKEN = os.getenv("VK_TOKEN") 
-    STATUS = "Now playing (Spotify): {track} - {artist} | {album}"
+    STATUS = "🎧 Spotify | {track} - {artist} | {album}"
     STANDART_STATUS = ""
 
 
@@ -15,4 +15,4 @@ class SpotifyConfig:
     CLIENT_SECRET = os.getenv("CLIENT_SECRET")
     REDIRECT_URI = os.getenv("REDIRECT_URI") # http://localhost:5000/callback
     USERNAME = os.getenv("USERNAME")
-    SCOPE = "user-read-playback-state user-library-read"
+    SCOPE = "user-read-currently-playing"

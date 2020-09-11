@@ -1,6 +1,7 @@
 import time
-import spotipy
 import typing
+import spotipy
+
 from spotipy.oauth2 import SpotifyOAuth
 from VKLight import ( VKLight, VKLightError )
 from .config import ( VKConfig, SpotifyConfig )
@@ -39,10 +40,10 @@ def update_status(_current_playing):
 
         if _current_playing != [track, album, artist]:
             set_status(VKConfig.STATUS.format(track=track, album=album, artist=artist))
-            print(f"Сейчас играет: {track} - {artist} | {album}")
+            time_now = time.strftime("%H:%M:%S", time.localtime())
+            print(f"[{time_now}] 🎧 Spotify | {track} - {artist}")
 
         return [track, album, artist]
-
 
     if not _current_playing is None:
         set_standart_status()

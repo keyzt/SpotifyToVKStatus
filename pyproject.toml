@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "spotifyTo-VK-Status"
+name = "spotifyToVKStatus"
 version = "0.1.0"
 description = ""
 authors = ["Ivan <pass@gmail.com>"]
