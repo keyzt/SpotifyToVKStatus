@@ -1,5 +1,7 @@
-# SpotifyToVKStatus
-**SpotifyToVKStatus** - модуль для трянсляции прослушиваемых треков из Spotify в статуст ВКонтакте.
+<p align="center">
+  <img src="logo.svg"  width="450"/>
+  <p align="center"><b>Утилита</b> для трянсляции прослушиваемых треков из Spotify в статус ВКонтакте.</p>
+</p>
 
 # Установка
 
