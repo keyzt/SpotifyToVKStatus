@@ -4,10 +4,11 @@ from dotenv import load_dotenv
 
 load_dotenv('.env')
 
+
 class VKConfig:
     VK_TOKEN = os.getenv("VK_TOKEN") 
     STATUS = "🎧 Spotify | {track} - {artist} | {album}"
-    STANDART_STATUS = ""
+    DEFAULT_STATUS = os.getenv("DEFAULT_STATUS") or f"SpotifyToVKStatus"
 
 
 class SpotifyConfig:

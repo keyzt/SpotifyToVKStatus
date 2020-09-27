@@ -1,11 +1,15 @@
 import time
 import typing
 import spotipy
+import logging
+import app.logger
 
 from spotipy.oauth2 import SpotifyOAuth
-from VKLight import ( VKLight, VKLightError )
-from .config import ( VKConfig, SpotifyConfig )
+from VKLight import (VKLight, VKLightError)
+from .config import (VKConfig, SpotifyConfig)
 
+
+logger = logging.getLogger("spotifyToVKStatus")
 
 spotify = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
@@ -25,14 +29,13 @@ vk = VKLight(dict(
     )
 )
 
-
 current_playing = typing.List[typing.Union[str, str, str]]
 
 
 def update_status(_current_playing):
     current = spotify.current_user_playing_track()
 
-    if not current is None:
+    if current is not None:
 
         track = current["item"]["name"]
         album = current["item"]["album"]["name"]
@@ -40,42 +43,39 @@ def update_status(_current_playing):
 
         if _current_playing != [track, album, artist]:
             set_status(VKConfig.STATUS.format(track=track, album=album, artist=artist))
-            time_now = time.strftime("%H:%M:%S", time.localtime())
-            print(f"[{time_now}] 🎧 Spotify | {track} - {artist}")
+            logger.info(f"🎧 Spotify | {track} - {artist}")
 
         return [track, album, artist]
 
-    if not _current_playing is None:
-        set_standart_status()
-    
-    return 
+    if _current_playing is not None:
+        set_default_status()
+
+    return
 
 
-def set_standart_status() -> None:
-    print("Установлен стандартный статус")
-    return vk.call("status.set", { "text": VKConfig.STANDART_STATUS })
+def set_default_status() -> dict:
+    logger.info("Установлен стандартный статус")
+    return vk.call("status.set", {"text": VKConfig.DEFAULT_STATUS})
 
 
-def set_status(status) -> None:
-    return vk.call("status.set", { "text": status })
+def set_status(status) -> dict:
+    return vk.call("status.set", {"text": status})
 
 
 if __name__ == '__main__':
     try:
-        # VKConfig.STANDART_STATUS = vk("status.get")['response']['text']
-        print(f"Текущий статус: {VKConfig.STANDART_STATUS}")
+        logger.info(f"Текущий статус: {VKConfig.DEFAULT_STATUS}")
 
         while True:
-            # print("Получаю обновления")
+            logger.debug("Получаю обновления")
             current_playing = update_status(current_playing)
             time.sleep(8)
 
-
     except VKLightError as e:
-        print(e)
+        logger.exception(e)
 
     except (SystemExit, KeyboardInterrupt) as e:
-        set_standart_status()
+        set_default_status()
 
     except Exception as e:
-        print(e)
+        logger.exception(e)
